@@ -7,3 +7,4 @@ FastAPI and Python 3.9
 3. Create a Python venv for this project using 3.11: `/usr/local/bin/python3.11 -m venv venv_aplusi`
 4. Activate your Python virtual environment for this project: `source venv_aplusi/bin/activate`
 5. Once your venv is active, `pip install -r requirements.txt` to install this project's python dependencies.
+6. Start the local backend server: `uvicorn main:app --reload`
