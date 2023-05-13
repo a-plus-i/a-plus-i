@@ -1,5 +1,5 @@
 # Backend server
-FastAPI and Python 3.9
+FastAPI and Python 3.11
 
 ## Getting Started
 1. Install Python 3.11.3 by using one of the files at the bottom of [this page](https://www.python.org/downloads/release/python-3113/)
