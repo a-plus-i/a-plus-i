@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import './App.css'
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import axios from 'axios';
+import { Button, TextField } from '@mui/material';
+
 
 function App() {
+  const [aiAnswer, setAiAnswer] = useState("")
+  const [userInput, setUserInput] = useState("")
   const [count, setCount] = useState(0)
 
   const onClick = () => {
-
+    axios.get('http://127.0.0.1:8000/chat/' + userInput)
+      .then((response) => {
+        console.log(response.data);
+        setAiAnswer(response.data);
+      });
   }
 
 
@@ -29,13 +37,20 @@ function App() {
             problems, removing financial barriers to achieving your dreams
           </pre>
         </div>
-        <Button
-          onClick={() => {
-            axios.get("")
-
+        <TextField
+          id="outlined-controlled"
+          label="Controlled"
+          value={userInput}
+          onChange={(event) => {
+            setUserInput(event.target.value)
           }}
+        />
+        <Button
+          onClick={onClick}
         >
+          Ask AI
         </Button>
+        <p>{aiAnswer}</p>
       </div>
 
     </>
